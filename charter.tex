@@ -5,8 +5,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
-
+\titulo{Control de acceso para alquileres temporarios. Interacción con periféricos de teléfono móvil desde aplicación web.} 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
@@ -15,21 +14,21 @@ codirector, % Uncomment to add a codirector to the title page
 %\posgrado{Maestría en Internet de las cosas}
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Título y Nombre del autor}
+\autor{Ing. Andrea García}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
-\pertenenciaDirector{pertenencia} 
+\director{Ing. Sergio Starkloff, CTO.}
+\pertenenciaDirector{SURiX} 
 \codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Ing. Sergio Starkloff, CTO.}
+\empresaCliente{SURiX}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{27 de febrero de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{xx de junio de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{xx de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -105,141 +104,90 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección. En cada entrega parcial deben eliminar los comandos begin y end del bloque consigna de las secciones que hayan completado.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
+El proyecto actual forma parte del programa de vinculación de la Universidad de Buenos Aires en colaboración con SURiX, una empresa líder con más de dos décadas de experiencia en soluciones IP para seguridad y control de acceso. La motivación para abordar la interacción de periféricos desde la web surge como respuesta a la ineficiencia detectada en la coordinación de la entrega de llaves, una problemática evidente en el ámbito de la renta de alojamientos colaborativos como AirB\&B.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+La solución propuesta se basada en una aplicación que utiliza tecnología web para ofrecer una experiencia eficiente, segura y cómoda, permitiendo el acceso a través de los periféricos de los dispositivos móviles de los usuarios. El proceso se divide en cuatro fases: integración con las APIs de Bluetooth y grabación de audio, diseño y desarrollo de la página web, pruebas y ajustes, y finalmente, la implementación y lanzamiento del sistema.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+En el ámbito comercial, las cerraduras digitales son comúnmente utilizadas para transformar la seguridad residencial en este ámbito. Sin embargo, la presente iniacitiva está basada en la web y se destaca por su enfoque en la accesibilidad e interoperabilidad, a diferencia de los dispositivos que a menudo requieren aplicaciones propias. El contar con un aplicativo privado constituye una restricción, ya que suele depender de las actualizaciones del sistema operativo, además la creciente variedad de dispositivos puede generar desafíos en términos de compatibilidad y desarrollo.
 
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+La lógica de funcionamiento del proyecto en mención utiliza recursos web para interactuar con la cámara, bluetooth y audio del teléfono móvil del inquilino. Esto permite acciones como el escaneo de códigos QR, validación de información, apertura de puertas, comunicación a través de bluetooth y un buzón de voz para mensajes entre inquilino y propietario tal como se muestra en la fig \ref{fig:diagBloques}. La facilidad de uso, interfaz intuitiva y accesibilidad universal resaltan la singularidad del proyecto, respaldado por la experiencia de SURiX en soluciones tecnológicas innovadoras.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=1\textwidth]{./Figuras/flowchart.png}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
-
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-\end{consigna}
+Este prototipo, ilustrando la integración de la aplicación web con periféricos del teléfono, no involucra bases de datos para inquilinos o propietarios y carece de controles temporales para el acceso. Prescinde de un sistema de inicio de sesión y, en relación al buzón de voz, propone un modelo donde los mensajes del usuario se convierten en mensajes recibidos lo que establece un ciclo continuo. Este diseño simplificado concuerda con el propósito demostrativo del proyecto, enfocándose en la esencial interacción web-periférico.  
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % este comando se debe borrar para la entrega, junto con la contraparte \end{consigna}{red} 
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
-
+Para llevar a cabo este proyecto de colaboración entre la empresa asociada y la UBA, se requiere la participación de varios individuos. A continuación en el cuadro \ref{tab:interesados}, se detalla a los involucrados:
 \begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
+\caption{Identificación de los interesados}
+\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Auspiciante   &        -          &        -        &         -          \\ \hline
+Cliente       & \clientename      &\empclientename	& Director del Trabajo Final\\ \hline
+Impulsor      &        -          &        -        &        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Colaboradores &        -          &        -        &        -          \\ \hline
+Orientador    &        -          &        -        &        -           \\ \hline
+Equipo        & Leslie Queglas \newline 
+			Estefanía Del Valle Fiorabanti & SURiX &Full Stack Developer\\ \hline
+Opositores    &        -          &         -       &        -          \\ \hline
+Usuario final &        -          &         -       &        -          \\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
-
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Cliente: Sergio Starkloff, fundador de SURiX, lidera la propuesta bajo su calidad de director del trabajo final y orientador. Define los requisitos tecnológicos clave para resolver la problemática central del proyecto.
+         \item Responsable: Andrea García, es la persona encargada del desarrollo del aplicativo web y la realización de pruebas.
+	\item Equipo: Los miembros del equipo, Leslie Quetglas y Estefanıa Del Valle Fiorabanti, forman parte de SURiX como desarrolladoras Full Stack y apoyan a la responsable en temas de Front End del presente proyecto.
+	
 \end{itemize}
-
-\end{consigna} % este comando se debe borrar para la entrega, junto con la contraparte \begin{consigna}{red}
-
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+El propósito de este proyecto es abordar la ineficiencia en la coordinación de la entrega de llaves en el alquiler de alojamientos temporarios, mediante el desarrollo de una aplicación web innovadora que permita el acceso a través de los dispositivos móviles de los usuarios, interactuando con los periféricos correspondientes. Se busca mejorar la experiencia de los usuarios y optimizar la gestión de las propiedades, ofreciendo una solución integral basada en la accesibilidad, interoperabilidad y seguridad proporcionadas por la tecnología web.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
-
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
 El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+	\item Desarrollo de una aplicación web para la gestión de acceso a alojamientos temporarios.
+        \begin{itemize}
+    		\item Integración con APIs de Bluetooth y grabación de audio.
+    		\item Diseño y desarrollo de la interfaz de usuario.
+        \end{itemize}
+	\item Pruebas y ajustes del sistema.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna}
-
+El proyecto no incluye:
+\begin{itemize}
+	\item Implementación de una base de datos para gestionar información de inquilinos o propietarios.
+        \item Control de fechas y horarios para el acceso.
+        \item Sistema de inicio de sesión.
+	\item Desarrollo de hardware para dispositivos de acceso.
+\end{itemize}
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
-
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+	\item Se dispone del equipo necesario para llevar a cabo pruebas de comunicación entre periféricos y hardware, lo cual incluye dispositivos móviles compatibles con Bluetooth y acceso a servidores propios proporcionados por SURiX para alojar la aplicación web.
+	\item Existe acceso a herramientas de desarrollo de software y entornos de prueba para garantizar la funcionalidad y compatibilidad del sistema en diferentes dispositivos móviles.
+	\item Se cuenta con un ambiente de pruebas adecuado para simular escenarios de uso real y verificar la interoperabilidad de los periféricos con la aplicación web.
+        \item El personal técnico tiene el conocimiento y la capacitación necesarios para llevar a cabo las pruebas de manera efectiva y resolver cualquier problema que pueda surgir durante el proceso de desarrollo.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
