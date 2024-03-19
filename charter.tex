@@ -5,7 +5,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Control de acceso para alquileres temporarios. Interacción con periféricos de teléfono móvil desde aplicación web.} 
+\titulo{Aplicación web para el control de acceso en alquileres temporales mediante la gestión de periféricos.} 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
@@ -17,17 +17,17 @@ codirector, % Uncomment to add a codirector to the title page
 \autor{Ing. Andrea García}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Ing. Sergio Starkloff, CTO.}
+\director{Ing. Sergio Starkloff, CTO}
 \pertenenciaDirector{SURiX} 
 \codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Ing. Sergio Starkloff, CTO.}
+\cliente{Ing. Sergio Starkloff, CTO}
 \empresaCliente{SURiX}
  
 \fechaINICIO{27 de febrero de 2024}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{xx de junio de 2024} 	%Fecha de final de cursada de GdP
+\fechaFINALPlan{16 de abril de 2024} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{xx de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
 
@@ -57,11 +57,8 @@ codirector, % Uncomment to add a codirector to the title page
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 5 inclusive                & {día} de {mes} de 202X \\ \hline
-%2      & Se completa hasta el punto 9 inclusive
-%		  Se puede agregar algo más \newline
-%		  En distintas líneas \newline
-%		  Así                                                    & {día} de {mes} de 202X \\ \hline
+1      & Se completa hasta el punto 5 inclusive                & 12 de marzo de 2024 \\ \hline
+2      & Se completa hasta el punto 9 inclusive                & 19 de marzo de 2024 \\ \hline
 %3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
 %4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
 
@@ -83,7 +80,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con la \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en desarrollar una aplicación web en colaboración con SURiX para facilitar el ingreso a propiedades rentadas por periodos cortos mediante la interacción con dispositivos móviles de los inquilinos. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -104,13 +101,13 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-El proyecto actual forma parte del programa de vinculación de la Universidad de Buenos Aires en colaboración con SURiX, una empresa líder con más de dos décadas de experiencia en soluciones IP para seguridad y control de acceso. La motivación para abordar la interacción de periféricos desde la web surge como respuesta a la ineficiencia detectada en la coordinación de la entrega de llaves, una problemática evidente en el ámbito de la renta de alojamientos colaborativos como AirB\&B.
+El proyecto actual forma parte del programa de vinculación de la Universidad de Buenos Aires en colaboración con SURiX, una empresa líder con más de dos décadas de experiencia en soluciones IP para seguridad y control de acceso. La motivación para abordar la interacción de periféricos desde la web surge como respuesta a la ineficiencia detectada en la coordinación de la entrega de llaves, una problemática evidente en el ámbito de la renta de alojamientos colaborativos como Airbnb.
 
-La solución propuesta se basada en una aplicación que utiliza tecnología web para ofrecer una experiencia eficiente, segura y cómoda, permitiendo el acceso a través de los periféricos de los dispositivos móviles de los usuarios. El proceso se divide en cuatro fases: integración con las APIs de Bluetooth y grabación de audio, diseño y desarrollo de la página web, pruebas y ajustes, y finalmente, la implementación y lanzamiento del sistema.
+La solución propuesta se basa en una aplicación que utiliza tecnología web para ofrecer una experiencia eficiente, segura y cómoda, permitiendo el acceso a través de los periféricos de los dispositivos móviles de los usuarios. El proceso se divide en cuatro fases: integración con las APIs de Bluetooth y grabación de audio, diseño y desarrollo de la página web, pruebas y ajustes, y finalmente, la implementación y lanzamiento del sistema.
 
-En el ámbito comercial, las cerraduras digitales son comúnmente utilizadas para transformar la seguridad residencial en este ámbito. Sin embargo, la presente iniacitiva está basada en la web y se destaca por su enfoque en la accesibilidad e interoperabilidad, a diferencia de los dispositivos que a menudo requieren aplicaciones propias. El contar con un aplicativo privado constituye una restricción, ya que suele depender de las actualizaciones del sistema operativo, además la creciente variedad de dispositivos puede generar desafíos en términos de compatibilidad y desarrollo.
+En el ámbito comercial, las cerraduras digitales son comúnmente utilizadas para transformar la seguridad residencial en este ámbito. Sin embargo, la presente iniciativa está basada en la web y se destaca por su enfoque en la accesibilidad e interoperabilidad, a diferencia de los dispositivos que a menudo requieren aplicaciones propias. El contar con un aplicativo privado constituye una restricción, ya que suele depender de las actualizaciones del sistema operativo, además la creciente variedad de dispositivos puede generar desafíos en términos de compatibilidad y desarrollo.
 
-La lógica de funcionamiento del proyecto en mención utiliza recursos web para interactuar con la cámara, bluetooth y audio del teléfono móvil del inquilino. Esto permite acciones como el escaneo de códigos QR, validación de información, apertura de puertas, comunicación a través de bluetooth y un buzón de voz para mensajes entre inquilino y propietario tal como se muestra en la fig \ref{fig:diagBloques}. La facilidad de uso, interfaz intuitiva y accesibilidad universal resaltan la singularidad del proyecto, respaldado por la experiencia de SURiX en soluciones tecnológicas innovadoras.
+La lógica de funcionamiento del proyecto en mención utiliza recursos web para interactuar con la cámara, Bluetooth y audio del teléfono móvil del inquilino. Esto permite acciones como el escaneo de códigos QR, validación de información, apertura de puertas, comunicación a través de bluetooth y un buzón de voz para mensajes entre inquilino y propietario tal como se muestra en la figura \ref{fig:diagBloques}. La facilidad de uso, interfaz intuitiva y accesibilidad universal resaltan la singularidad del proyecto, respaldado por la experiencia de SURiX en soluciones tecnológicas innovadoras.
 
 \begin{figure}[htpb]
 \centering 
@@ -132,22 +129,24 @@ Para llevar a cabo este proyecto de colaboración entre la empresa asociada y la
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &        -          &        -        &         -          \\ \hline
-Cliente       & \clientename      &\empclientename	& Director del Trabajo Final\\ \hline
-Impulsor      &        -          &        -        &        	\\ \hline
+%Auspiciante   &        -          &        -        &         -          \\ \hline
+Cliente       & SURiX      &\empclientename	& Empresa de vinculación\\ \hline
+%Impulsor      &        -          &        -        &        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &        -          &        -        &        -          \\ \hline
-Orientador    &        -          &        -        &        -           \\ \hline
+%Colaboradores &        -          &        -        &        -          \\ \hline
+Orientador    & \clientename      &\empclientename	& Director del Trabajo Final\\ \hline
 Equipo        & Leslie Queglas \newline 
-			Estefanía Del Valle Fiorabanti & SURiX &Full Stack Developer\\ \hline
-Opositores    &        -          &         -       &        -          \\ \hline
-Usuario final &        -          &         -       &        -          \\ \hline
+			Estefanía Del Valle Fiorabanti & SURiX &Full Stack Developers\\ \hline
+%Opositores    &        -          &         -       &        -          \\ \hline
+%Usuario final &        -          &         -       &        -          \\ \hline
 \end{tabularx}
 \end{table}
 
 \begin{itemize}
-	\item Cliente: Sergio Starkloff, fundador de SURiX, lidera la propuesta bajo su calidad de director del trabajo final y orientador. Define los requisitos tecnológicos clave para resolver la problemática central del proyecto.
+        \item Cliente: SURIX, fundada en 1998, es una empresa que ofrece soluciones de comunicación y control de acceso IP y analógicas.
+        \item Responsable: Andrea García, es la persona encargada del desarrollo del aplicativo web y la realización de pruebas.
          \item Responsable: Andrea García, es la persona encargada del desarrollo del aplicativo web y la realización de pruebas.
+	\item Orientador: Sergio Starkloff, fundador de SURiX, lidera la propuesta bajo su calidad de director del trabajo final. Define los requisitos tecnológicos clave para resolver la problemática central del proyecto.
 	\item Equipo: Los miembros del equipo, Leslie Quetglas y Estefanıa Del Valle Fiorabanti, forman parte de SURiX como desarrolladoras Full Stack y apoyan a la responsable en temas de Front End del presente proyecto.
 	
 \end{itemize}
@@ -156,7 +155,7 @@ Usuario final &        -          &         -       &        -          \\ \hlin
 \label{sec:proposito}
 
 El propósito de este proyecto es abordar la ineficiencia en la coordinación de la entrega de llaves en el alquiler de alojamientos temporarios, mediante el desarrollo de una aplicación web innovadora que permita el acceso a través de los dispositivos móviles de los usuarios, interactuando con los periféricos correspondientes. Se busca mejorar la experiencia de los usuarios y optimizar la gestión de las propiedades, ofreciendo una solución integral basada en la accesibilidad, interoperabilidad y seguridad proporcionadas por la tecnología web.
-
+\newpage
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
@@ -190,112 +189,121 @@ Para el desarrollo del presente proyecto se supone que:
 \end{itemize}
 
 \section{6. Requerimientos}
-\label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben enumerarse y de ser posible estar agrupados por afinidad, por ejemplo:
-
+\subsection{Requerimientos funcionales}
 \begin{enumerate}
-	\item Requerimientos funcionales:
-		\begin{enumerate}
-			\item El sistema debe...
-			\item Tal componente debe...
-			\item El usuario debe poder...
-		\end{enumerate}
-	\item Requerimientos de documentación:
-		\begin{enumerate}
-			\item Requerimiento 1.
-			\item Requerimiento 2 (prioridad menor)
-		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
-	\item Requerimientos interoperabilidad...
-	\item etc...
+\item Los usuarios deben poder visualizar la información de la propiedad correspondiente para alquiler temporal.(prioridad menor)
+\item Los usuarios deben poder utilizar los periféricos de su teléfono móvil para interactuar con la aplicación.(prioridad mayor)
+\item La aplicación web debe proporcionar una funcionalidad de escaneo de códigos QR para acceder a la información de la propiedad.(prioridad mayor)
+\item Una vez escaneado el código QR, la aplicación debe proporcionar al usuario la información necesaria para conectarse por Bluetooth con la cerradura electrónica de la propiedad.(prioridad mayor)
+\item La aplicación debe permitir al usuario abrir o cerrar la cerradura electrónica utilizando la funcionalidad de activación Bluetooth.(prioridad mayor)
+\item El sistema debe notificar al propietario cuando la cerradura electrónica se abre o se cierra.(prioridad menor)
+\item La aplicación web debe facilitar la comunicación entre el inquilino y el propietario mediante mensajes de voz.(prioridad mayor)
+\item La aplicación debe ser compatible con el navegador web Chrome con versión mínima 85 en sistema operativo Android.(prioridad mayor)
+\item Todos los mensajes de voz y la información relacionada deben estar alojados en los servidores de SURiX.(prioridad menor)
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
+\subsection{Requerimientos de documentación}
+\begin{enumerate}
+\item Se debe incluir un manual de usuario que explique cómo utilizar todas las funciones de la aplicación.(prioridad mayor)
+\item La documentación técnica debe describir la arquitectura del sistema y los requisitos de hardware y software necesarios para su implementación.(prioridad menor)
+\end{enumerate}
 
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
+\subsection{Requerimientos de testing}
+\begin{enumerate}
+\item Se deben realizar pruebas exhaustivas de funcionalidad para asegurar que todas las características de la aplicación funcionen correctamente.(prioridad mayor)
+\item Se deben llevar a cabo pruebas de compatibilidad para verificar que la aplicación sea compatible con determinados dispositivos móviles y navegadores web.(prioridad mayor)
+\item Se deben realizar pruebas de seguridad para identificar posibles vulnerabilidades y asegurar la protección de los datos de los usuarios.(prioridad menor)
+\end{enumerate}
 
-\textbf{¡¡¡No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!}
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
+\subsection{Requerimientos de interfaz}
+\begin{enumerate}
+\item La interfaz de usuario debe ser intuitiva y fácil de navegar.(prioridad mayor)
+\item Se debe proporcionar retroalimentación visual para confirmar las acciones realizadas por el usuario, como el acceso a la propiedad o el envío de un mensaje de voz.(prioridad menor)
+\item La aplicación debe contar con un diseño responsive que se adapte automáticamente a diferentes tamaños de pantalla.(prioridad menor)
+\end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: en esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+\subsection{Roles}
+\begin{itemize}
+\item Inquilino: Usuario que alquila una propiedad temporalmente y necesita acceder a través de la aplicación web.
+\item Propietario: Usuario que ofrece propiedades en alquiler temporal y necesita gestionar el acceso de los inquilinos.
+\end{itemize}
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia.
+\subsection{Puntos de historia}
+Para la ponderación de cada historia de usuario, se hará uso de una escala que comprende valores entre 1, 2, 3 y 5. En el caso de que una de ellas llegara a ser calificada con 5, daría lugar a una nueva tarea en el plan de proyecto que puede ser ejecutada como un \textit{sprint} de no más de 40 horas.
 
-El formato propuesto es: 
-\begin{enumerate}
-\item ``Como [rol] quiero [tal cosa] para [tal otra cosa]."
+La asignación de puntos es relativa a tres ejes: funcionamiento, complejidad y dificultad. La prioridad es valorada según el número de historias y los puntos de cada una.
 
-\textit{Story points}: 8 (complejidad: 3, dificultad: 2, incertidumbre: 3)
-\end{enumerate}
-\end{consigna}
+\begin{itemize}
+\item 1 punto: Requiere modificaciones mínimas en el sistema y no demanda muchas horas de desarrollo.
+\item 2 puntos: Requiere cambios en el sistema y demanda varias horas de desarrollo.
+\item 3 puntos: Implica riesgo de modificar el sistema y puede demandar muchas horas de desarrollo.
+\item 5 puntos: Si la funcionalidad no se implementa, el sistema no funciona correctamente.
+\end{itemize}
+\subsection{Historias de usuarios}
+\begin{table}[h]
+\centering
+\begin{tabular}{|c|c|c|} 
+\hline
+\textbf{Historia de usuario}                                                                                                                                                                                                                                      & \begin{tabular}[c]{@{}c@{}}\textbf{Puntos de}\\\textbf{historia}\end{tabular} & \multicolumn{1}{l|}{\textbf{Prioridad}}  \\ 
+\hline
+\begin{tabular}[c]{@{}c@{}}Como inquilino/a, quiero visualizar la información detallada\\ de la propiedad que he reservado para conocer los detalles\\relevantes antes de mi llegada.\end{tabular}                                                                              & 1                                                                             & 4                                        \\ 
+\hline
+\begin{tabular}[c]{@{}c@{}}Como inquilino/a, deseo utilizar la aplicación web para\\ acceder a la propiedad reservada mediante los\\periféricos de mi teléfono móvil.\end{tabular} & 5                                                                             & 1                                        \\ 
+\hline
+\begin{tabular}[c]{@{}c@{}}Como propietario/a, necesito recibir notificaciones\\cuando un inquilino acceda o salga de la propiedad para\\mantener un registro de los accesos.\end{tabular}                                   & 2                                                                             & 3                                        \\ 
+\hline
+\begin{tabular}[c]{@{}c@{}}Como inquilino/a, quiero poder comunicarme con el\\ propietario mediante mensajes de voz integrados en la aplicación\\web para resolver cualquier consulta o inconveniente durante mi estadía.\end{tabular}                                                                          & 3                                                                             & 2                                        \\
+\hline
+\end{tabular}
+\end{table}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
-Los entregables del proyecto son (ejemplo):
+Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Manual de usuario.
-	\item Diagrama de circuitos esquemáticos.
-	\item Código fuente del firmware.
-	\item Diagrama de instalación.
-	\item Memoria del trabajo final.
-	\item etc...
+    \item Manual de usuario detallado que explique cómo utilizar todas las funciones de la aplicación, incluyendo la interacción con los periféricos móviles y la gestión de accesos a propiedades temporales.
+    \item Documentación técnica que describa la arquitectura del sistema, los requisitos de hardware y software, y los procedimientos de instalación y configuración.
+    \item Código fuente de la aplicación web, que incluya todas las funcionalidades requeridas, como el escaneo de códigos QR, la activación Bluetooth de la cerradura electrónica y la comunicación por mensajes de voz.
+    \item Informe de pruebas que detalle los resultados de las pruebas de funcionalidad, compatibilidad y seguridad realizadas para garantizar el correcto funcionamiento.
 \end{itemize}
-\end{consigna}
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
-
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
-
 \begin{enumerate}
-\item Grupo de tareas 1 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 2 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\end{enumerate}
-\item Grupo de tareas 3 (suma h)
-	\begin{enumerate}
-	\item Tarea 1 (tantas h)
-	\item Tarea 2 (tantas h)
-	\item Tarea 3 (tantas h)
-	\item Tarea 4 (tantas h)
-	\item Tarea 5 (tantas h)
-	\end{enumerate}
-\end{enumerate}
+\item Desarrollo de la aplicación web (110 h)
+    \begin{enumerate}
+        \item Investigación y selección de tecnologías (20 h)
+        \item Diseño de la arquitectura (20 h)
+        \item Implementación de la funcionalidad de visualización de información de la propiedad (10 h)
+        \item Desarrollo de la funcionalidad de escaneo de códigos QR (15 h)
+        \item Desarrollo de la funcionalidad de activación Bluetooth (15 h)
+        \item Desarrollo de la funcionalidad de grabar, guardar y enviar audio (30 h)
+    \end{enumerate}
+\item Pruebas y ajustes (70 h)
+    \begin{enumerate}
+        \item Realización de pruebas de funcionalidad (25 h)
+        \item Ejecución de pruebas de compatibilidad (25 h)
+        \item Realización de pruebas de seguridad (20 h)
+    \end{enumerate}
+\item Documentación (45 h)
+    \begin{enumerate}
+        \item Elaboración del manual de usuario (20 h)
+        \item Redacción de la documentación técnica (25 h)
+    \end{enumerate}
+\item Preparación de entregables finales (25 h)
+        \begin{enumerate}
+            \item Elaboración del informe de pruebas (10 h)
+            \item Redacción de la memoria del trabajo final (15 h)
+        \end{enumerate}
+    \end{enumerate}
 
-Cantidad total de horas: tantas.
-
-\textbf{¡Importante!:} la unidad de horas es h y va separada por espacio del número. Es incorrecto escribir ``23hs".
-
-\textbf{Se recomienda que no haya ninguna tarea que lleve más de 40 h.} De ser así se recomienda dividirla en tareas de menor duración.
-
-\end{consigna}
+Cantidad total de horas: 250 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -593,5 +601,4 @@ Establecer las pautas de trabajo para realizar una reunión final de evaluación
 \end{itemize}
 
 \end{consigna}
-
 \end{document}
