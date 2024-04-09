@@ -5,7 +5,7 @@ codirector, % Uncomment to add a codirector to the title page
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Aplicación web para el control de acceso en alquileres temporales mediante la gestión de periféricos.} 
+\titulo{Aplicación web para el control de acceso en alquileres temporales mediante la gestión de periféricos} 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 \posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
@@ -19,7 +19,7 @@ codirector, % Uncomment to add a codirector to the title page
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
 \director{Ing. Sergio Starkloff, CTO}
 \pertenenciaDirector{SURiX} 
-\codirector{Título y Nombre del codirector} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
+\codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
@@ -30,6 +30,7 @@ codirector, % Uncomment to add a codirector to the title page
 \fechaFINALPlan{16 de abril de 2024} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{xx de mayo de 2024}	%Fecha de defensa pública del trabajo final
 
+\usepackage{rotating}
 
 \begin{document}
 
@@ -59,7 +60,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 0      & Creación del documento                                 &\fechaInicioName \\ \hline
 1      & Se completa hasta el punto 5 inclusive                & 12 de marzo de 2024 \\ \hline
 2      & Se completa hasta el punto 9 inclusive                & 19 de marzo de 2024 \\ \hline
-%3      & Se completa hasta el punto 12 inclusive                & {día} de {mes} de 202X \\ \hline
+3      & Se completa hasta el punto 12 inclusive                & 26 de marzo de 2024 \\ \hline
 %4      & Se completa el plan	                                 & {día} de {mes} de 202X \\ \hline
 
 % Si hay más correcciones pasada la versión 4 también se deben especificar acá
@@ -116,7 +117,7 @@ La lógica de funcionamiento del proyecto en mención utiliza recursos web para 
 \label{fig:diagBloques}
 \end{figure}
 
-Este prototipo, ilustrando la integración de la aplicación web con periféricos del teléfono, no involucra bases de datos para inquilinos o propietarios y carece de controles temporales para el acceso. Prescinde de un sistema de inicio de sesión y, en relación al buzón de voz, propone un modelo donde los mensajes del usuario se convierten en mensajes recibidos lo que establece un ciclo continuo. Este diseño simplificado concuerda con el propósito demostrativo del proyecto, enfocándose en la esencial interacción web-periférico.  
+Este prototipo, si bien integra la aplicación web con periféricos del teléfono, no involucra bases de datos para inquilinos o propietarios y carece de controles temporales para el acceso. Asimismo, prescinde de un sistema de inicio de sesión y, en relación al buzón de voz, propone un modelo donde los mensajes del usuario se convierten en mensajes recibidos lo que establece un ciclo continuo. Este diseño simplificado concuerda con el propósito demostrativo del proyecto, enfocándose en la esencial interacción web-periférico.  
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
@@ -143,11 +144,10 @@ Equipo        & Leslie Queglas \newline
 \end{table}
 
 \begin{itemize}
-        \item Cliente: SURIX, fundada en 1998, es una empresa que ofrece soluciones de comunicación y control de acceso IP y analógicas.
+        \item Cliente: SURIX, fundada en 1998, es una empresa que ofrece soluciones de comunicación y control de acceso IP y analógico.
         \item Responsable: Andrea García, es la persona encargada del desarrollo del aplicativo web y la realización de pruebas.
-         \item Responsable: Andrea García, es la persona encargada del desarrollo del aplicativo web y la realización de pruebas.
-	\item Orientador: Sergio Starkloff, fundador de SURiX, lidera la propuesta bajo su calidad de director del trabajo final. Define los requisitos tecnológicos clave para resolver la problemática central del proyecto.
-	\item Equipo: Los miembros del equipo, Leslie Quetglas y Estefanıa Del Valle Fiorabanti, forman parte de SURiX como desarrolladoras Full Stack y apoyan a la responsable en temas de Front End del presente proyecto.
+	\item Orientador: Sergio Starkloff, fundador de SURiX, lidera la propuesta en calidad de director del trabajo final. Define los requisitos tecnológicos clave para resolver la problemática central del proyecto.
+	\item Equipo: los miembros del equipo, Leslie Quetglas y Estefanıa Del Valle Fiorabanti, forman parte de SURiX como desarrolladoras Full Stack y apoyan a la responsable en temas de Front End del presente proyecto.
 	
 \end{itemize}
 
@@ -192,35 +192,35 @@ Para el desarrollo del presente proyecto se supone que:
 
 \subsection{Requerimientos funcionales}
 \begin{enumerate}
-\item Los usuarios deben poder visualizar la información de la propiedad correspondiente para alquiler temporal.(prioridad menor)
-\item Los usuarios deben poder utilizar los periféricos de su teléfono móvil para interactuar con la aplicación.(prioridad mayor)
-\item La aplicación web debe proporcionar una funcionalidad de escaneo de códigos QR para acceder a la información de la propiedad.(prioridad mayor)
-\item Una vez escaneado el código QR, la aplicación debe proporcionar al usuario la información necesaria para conectarse por Bluetooth con la cerradura electrónica de la propiedad.(prioridad mayor)
-\item La aplicación debe permitir al usuario abrir o cerrar la cerradura electrónica utilizando la funcionalidad de activación Bluetooth.(prioridad mayor)
-\item El sistema debe notificar al propietario cuando la cerradura electrónica se abre o se cierra.(prioridad menor)
-\item La aplicación web debe facilitar la comunicación entre el inquilino y el propietario mediante mensajes de voz.(prioridad mayor)
-\item La aplicación debe ser compatible con el navegador web Chrome con versión mínima 85 en sistema operativo Android.(prioridad mayor)
-\item Todos los mensajes de voz y la información relacionada deben estar alojados en los servidores de SURiX.(prioridad menor)
+\item Los usuarios deben poder visualizar la información de la propiedad correspondiente para alquiler temporal (prioridad menor).
+\item Los usuarios deben poder utilizar los periféricos de su teléfono móvil para interactuar con la aplicación (prioridad mayor).
+\item La aplicación web debe proporcionar una funcionalidad de escaneo de códigos QR para acceder a la información de la propiedad (prioridad mayor).
+\item Una vez escaneado el código QR, la aplicación debe proporcionar al usuario la información necesaria para conectarse por Bluetooth con la cerradura electrónica de la propiedad (prioridad mayor).
+\item La aplicación debe permitir al usuario abrir o cerrar la cerradura electrónica utilizando la funcionalidad de activación Bluetooth (prioridad mayor).
+\item El sistema debe notificar al propietario cuando la cerradura electrónica se abre o se cierra (prioridad menor).
+\item La aplicación web debe facilitar la comunicación entre el inquilino y el propietario mediante mensajes de voz (prioridad mayor).
+\item La aplicación debe ser compatible con el navegador web Chrome con versión mínima 85 en sistema operativo Android (prioridad mayor).
+\item Todos los mensajes de voz y la información relacionada deben estar alojados en los servidores de SURiX (prioridad menor).
 \end{enumerate}
 
 \subsection{Requerimientos de documentación}
 \begin{enumerate}
-\item Se debe incluir un manual de usuario que explique cómo utilizar todas las funciones de la aplicación.(prioridad mayor)
-\item La documentación técnica debe describir la arquitectura del sistema y los requisitos de hardware y software necesarios para su implementación.(prioridad menor)
+\item Se debe incluir un manual de usuario que explique cómo utilizar todas las funciones de la aplicación (prioridad mayor).
+\item La documentación técnica debe describir la arquitectura del sistema y los requisitos de hardware y software necesarios para su implementación (prioridad menor).
 \end{enumerate}
 
 \subsection{Requerimientos de testing}
 \begin{enumerate}
-\item Se deben realizar pruebas exhaustivas de funcionalidad para asegurar que todas las características de la aplicación funcionen correctamente.(prioridad mayor)
-\item Se deben llevar a cabo pruebas de compatibilidad para verificar que la aplicación sea compatible con determinados dispositivos móviles y navegadores web.(prioridad mayor)
-\item Se deben realizar pruebas de seguridad para identificar posibles vulnerabilidades y asegurar la protección de los datos de los usuarios.(prioridad menor)
+\item Se deben realizar pruebas exhaustivas de funcionalidad para asegurar que todas las características de la aplicación funcionen correctamente (prioridad mayor).
+\item Se deben llevar a cabo pruebas de compatibilidad para verificar que la aplicación sea compatible con determinados dispositivos móviles y navegadores web (prioridad mayor).
+\item Se deben realizar pruebas de seguridad para identificar posibles vulnerabilidades y asegurar la protección de los datos de los usuarios (prioridad menor).
 \end{enumerate}
 
 \subsection{Requerimientos de interfaz}
 \begin{enumerate}
-\item La interfaz de usuario debe ser intuitiva y fácil de navegar.(prioridad mayor)
-\item Se debe proporcionar retroalimentación visual para confirmar las acciones realizadas por el usuario, como el acceso a la propiedad o el envío de un mensaje de voz.(prioridad menor)
-\item La aplicación debe contar con un diseño responsive que se adapte automáticamente a diferentes tamaños de pantalla.(prioridad menor)
+\item La interfaz de usuario debe ser intuitiva y fácil de navegar (prioridad mayor).
+\item Se debe proporcionar retroalimentación visual para confirmar las acciones realizadas por el usuario, como el acceso a la propiedad o el envío de un mensaje de voz (prioridad menor).
+\item La aplicación debe contar con un diseño \textit{responsive} que se adapte automáticamente a diferentes tamaños de pantalla (prioridad menor).
 \end{enumerate}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
@@ -228,8 +228,8 @@ Para el desarrollo del presente proyecto se supone que:
 
 \subsection{Roles}
 \begin{itemize}
-\item Inquilino: Usuario que alquila una propiedad temporalmente y necesita acceder a través de la aplicación web.
-\item Propietario: Usuario que ofrece propiedades en alquiler temporal y necesita gestionar el acceso de los inquilinos.
+\item Inquilino: usuario que alquila una propiedad temporalmente y necesita acceder a través de la aplicación web.
+\item Propietario: usuario que ofrece propiedades en alquiler temporal y necesita gestionar el acceso de los inquilinos.
 \end{itemize}
 
 \subsection{Puntos de historia}
@@ -238,10 +238,10 @@ Para la ponderación de cada historia de usuario, se hará uso de una escala que
 La asignación de puntos es relativa a tres ejes: funcionamiento, complejidad y dificultad. La prioridad es valorada según el número de historias y los puntos de cada una.
 
 \begin{itemize}
-\item 1 punto: Requiere modificaciones mínimas en el sistema y no demanda muchas horas de desarrollo.
-\item 2 puntos: Requiere cambios en el sistema y demanda varias horas de desarrollo.
-\item 3 puntos: Implica riesgo de modificar el sistema y puede demandar muchas horas de desarrollo.
-\item 5 puntos: Si la funcionalidad no se implementa, el sistema no funciona correctamente.
+\item 1 punto: requiere modificaciones mínimas en el sistema y no demanda muchas horas de desarrollo.
+\item 2 puntos: requiere cambios en el sistema y demanda varias horas de desarrollo.
+\item 3 puntos: implica riesgo de modificar el sistema y puede demandar muchas horas de desarrollo.
+\item 5 puntos: si la funcionalidad no se implementa, el sistema no funciona correctamente.
 \end{itemize}
 \subsection{Historias de usuarios}
 \begin{table}[h]
@@ -276,192 +276,90 @@ Los entregables del proyecto son:
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 \begin{enumerate}
-\item Desarrollo de la aplicación web (110 h)
-    \begin{enumerate}
-        \item Investigación y selección de tecnologías (20 h)
-        \item Diseño de la arquitectura (20 h)
-        \item Implementación de la funcionalidad de visualización de información de la propiedad (10 h)
-        \item Desarrollo de la funcionalidad de escaneo de códigos QR (15 h)
-        \item Desarrollo de la funcionalidad de activación Bluetooth (15 h)
-        \item Desarrollo de la funcionalidad de grabar, guardar y enviar audio (30 h)
-    \end{enumerate}
-\item Pruebas y ajustes (70 h)
-    \begin{enumerate}
-        \item Realización de pruebas de funcionalidad (25 h)
-        \item Ejecución de pruebas de compatibilidad (25 h)
-        \item Realización de pruebas de seguridad (20 h)
-    \end{enumerate}
-\item Documentación (45 h)
-    \begin{enumerate}
-        \item Elaboración del manual de usuario (20 h)
-        \item Redacción de la documentación técnica (25 h)
-    \end{enumerate}
-\item Preparación de entregables finales (25 h)
-        \begin{enumerate}
-            \item Elaboración del informe de pruebas (10 h)
-            \item Redacción de la memoria del trabajo final (15 h)
-        \end{enumerate}
-    \end{enumerate}
+\item Desarrollo de la aplicación web (250 h)
+\begin{enumerate}
+    \item Investigación y selección de tecnologías (40 h)
+    \item Diseño de la arquitectura (40 h)
+    \item Implementación de la funcionalidad de visualización de información de la propiedad (20 h)
+    \item Desarrollo de la funcionalidad de escaneo de códigos QR (30 h)
+    \item Desarrollo de la funcionalidad de activación Bluetooth (30 h)
+    \item Desarrollo de la funcionalidad de grabar, guardar y enviar audio (90 h)
+\end{enumerate}
+\item Pruebas y ajustes (180 h)
+\begin{enumerate}
+    \item Realización de pruebas de funcionalidad (70 h)
+    \item Ejecución de pruebas de compatibilidad (50 h)
+    \item Realización de pruebas de seguridad (60 h)
+\end{enumerate}
 
-Cantidad total de horas: 250 h.
+\item Documentación (90 h)
+\begin{enumerate}
+    \item Elaboración del manual de usuario (40 h)
+    \item Redacción de la documentación técnica (50 h)
+\end{enumerate}
+
+\item Preparación de entregables finales (70 h)
+\begin{enumerate}
+    \item Elaboración del informe de pruebas (20 h)
+    \item Redacción de la memoria del trabajo final (50 h)
+\end{enumerate}
+\end{enumerate}
+
+Cantidad total de horas: 590 h.
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
-
-\begin{consigna}{red}
-Armar el AoN a partir del WBS definido en la etapa anterior.
-
-Una herramienta simple para desarrollar los diagramas es el Draw.io (\url{https://app.diagrams.net/}).
-\href{https://app.diagrams.net}{Draw.io}
-
+Para poder identificar el flujo secuencial de las tareas del proyecto se ilustra un diagrama AON (\textit{Activity On Node}) (Véase Figura \ref{fig:AoN.drawio.png}). La ruta crítica es resaltada con bordes en negrita y posee una duración de 370 hs.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN.png}
-\caption{Diagrama de \textit{Activity on Node}.}
+\includegraphics[width=.9\textwidth]{./Figuras/AON.drawio.png}
+\caption{Diagrama en \textit{Activity on Node.}}
 \label{fig:AoN}
 \end{figure}
 
-Indicar claramente en qué unidades están expresados los tiempos.
-De ser necesario indicar los caminos semi críticos y analizar sus tiempos mediante un cuadro.
-Es recomendable usar colores y un cuadro indicativo describiendo qué representa cada color.
-
-\end{consigna}
-
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-
-\begin{consigna}{red}
-Existen muchos programas y recursos \textit{online} para hacer diagramas de Gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
-
-Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
-Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
-
-Configurar el software para que en la parte de la tabla muestre los códigos del EDT (WBS).\\
-Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
-Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
-
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. 
-En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
-
-Las fechas pueden ser calculadas utilizando alguna de las herramientas antes citadas. Sin embargo, el siguiente ejemplo
-fue elaborado utilizando 
-\href{https://docs.google.com/spreadsheets/d/1fBz8NhSpc4tkkhz3KjJCbh1nR_ltDkfEcZi4tZXduqs}{esta hoja de cálculo}.
-
-Es importante destacar que el ancho del diagrama estará dado por la longitud del texto utilizado para las tareas 
-(Ejemplo: tarea 1, tarea 2, etcétera) y el valor \textit{x unit}. Para mejorar la apariencia del diagrama, es necesario
-ajustar este valor y, quizás, acortar los nombres de las tareas.
-
-\begin{figure}[htpb]
-  \begin{center}
-    \begin{ganttchart}[
-      time slot unit=day,
-      time slot format=isodate,
-      x unit=0.038cm,
-      y unit title=0.7cm,
-      y unit chart=0.6cm,
-      milestone/.append style={xscale=4}
-      ]{2021-03-05}{2021-12-16}
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{year} \\
-      \gantttitlecalendar*{2021-03-05}{2021-12-16}{month} \\
-      \ganttgroup{Duración Total}{2021-03-05}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%Organización
-      \ganttgroup{Organización}{2021-03-05}{2021-04-16} \\
-      \ganttbar{Planificación del proyecto}{2021-03-05}{2021-04-15} \\
-      %%%%%%%%%%%%%%%%%Ejecución
-      \ganttgroup{Ejecución}{2021-04-16}{2021-10-21} \\
-      \ganttbar{Tarea 1}{2021-04-16}{2021-04-29} \\
-      \ganttbar{Tarea 2}{2021-04-30}{2021-05-13} \\
-      \ganttbar{Tarea 3}{2021-05-14}{2021-05-27} \\
-      \ganttbar{Tarea 4}{2021-05-28}{2021-07-12} \\
-      \ganttbar{Tarea 5}{2021-07-13}{2021-08-09} \\
-      \ganttbar{Tarea 6}{2021-08-10}{2021-09-23} \\
-      \ganttbar{Tarea 7}{2021-09-24}{2021-09-30} \\
-      \ganttbar{Tarea 8}{2021-10-01}{2021-10-14} \\
-      \ganttbar{Tarea 9}{2021-10-15}{2021-10-21} \\
-      % %%%%%%%%%%%%%%%%%Finalización
-      \ganttgroup{Finalización}{2021-10-22}{2021-12-16} \\
-      \ganttbar{Memoria v1}{2021-10-22}{2021-11-04} \\
-      \ganttbar{Memoria v2}{2021-11-05}{2021-11-18} \\
-      \ganttbar{Memoria final}{2021-11-19}{2021-12-02} \\
-      % La fecha del siguiente milestone es la fecha en que terminamos la memoria
-      \ganttmilestone{Enviar memoria al director}{2021-12-02} \\
-      \ganttbar{Elaborar la presentación}{2021-12-03}{2021-12-16} \\
-      \ganttmilestone{Ensayo de la presentación}{2021-12-16} \\
-      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \end{ganttchart}
-  \end{center}
-  \caption{Diagrama de gantt de ejemplo}
-  \label{fig:gantt}
-\end{figure}
-
-
-\begin{landscape}
+En la Figura \ref{fig:Tasks} se encuentran las tareas listadas con su fecha de inicio y fin según su organización a través de la apliación web Online Gantt. La representación gráfica en línea de tiempo puede ser observada en la Figura \ref{fig:Gantt}.
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Gantt-2.png}
-\caption{Ejemplo de diagrama de Gantt (apaisado).} %Modificar este título acorde.
-\label{fig:diagGantt}
+\includegraphics[width=.9\textwidth]{./Figuras/tareas.png}
+\caption{Tareas del plan de proyecto.}
+\label{fig:Tasks}
 \end{figure}
 
-\end{landscape}
-
-\end{consigna}
+\begin{sidewaysfigure}[htpb]
+    \centering 
+    \includegraphics[width=.9\textwidth]{./Figuras/gantt.png}
+    \caption{Diagrama Gantt del presente proyecto.}
+    \label{fig:Gantt}
+\end{sidewaysfigure}
 
 
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
-
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
-
-Incluir la aclaración de si se emplea como moneda el peso argentino (ARS) o si se usa moneda extranjera (USD, EUR, etc). Si es en moneda extranjera se debe indicar la tasa de conversión respecto a la moneda local en una fecha dada.
-
-\end{consigna}
-
+El presupuesto del presente proyecto inicialmente fue calculado en dólares americanos. Sin embargo, bajo una tasa de cambio 1 USD = 856.74 ARS a la fecha del 26 de marzo de 2024, los valores equivalentes en la divisa argentina se muestran en la siguiente tabla.
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+ Horas de ingeniería. &
+  \multicolumn{1}{c|}{520} &
+  \multicolumn{1}{c|}{\$ 8138,97} &
+  \multicolumn{1}{c|}{\$ 4232266,95} \\ \hline
+ Componentes varios. &
+  \multicolumn{1}{c|}{1} &
+  \multicolumn{1}{c|}{\$ 1206.87} &
+  \multicolumn{1}{c|}{\$ 1206.87} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 4352953,95} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -469,22 +367,14 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+Mes de alojamiento web. &
+  \multicolumn{1}{c|}{6} &
+  \multicolumn{1}{c|}{\$ 12851,13} &
+  \multicolumn{1}{c|}{\$ 77106,78} \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{c|}{\$ 77106,78} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
+\multicolumn{3}{|c|}{TOTAL} & \$ 4430060,73
    \\ \hline
 \end{tabularx}%
 \end{table}
